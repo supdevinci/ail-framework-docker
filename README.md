@@ -32,7 +32,7 @@ git clone https://github.com/supdevinci/ail-framework-docker.git
 cd ail-framework-docker
 ```
 
-### 2. Lauch the Docker Image
+### 2. Launch the Script
 ```bash
 chmod +x ail_framework.sh
 ./ail_framework.sh
@@ -41,6 +41,33 @@ chmod +x ail_framework.sh
 ---
 
 ## Usage
+
+### Script Options
+The `ail_framework.sh` script provides several options to manage the AIL-Framework Docker container:
+
+- `--help`: Displays help information and useful links.
+- `--setup`: Sets up the environment, builds the Docker image, and starts the container.
+- `--start`: Starts the Docker container if it's already built.
+- `--reset-password`: Resets the admin password for AIL-Framework.
+- `--stop`: Stops and removes the Docker container.
+
+Example usage:
+```bash
+# Display help information
+./ail_framework.sh --help
+
+# Set up the environment
+./ail_framework.sh --setup
+
+# Start the container
+./ail_framework.sh --start
+
+# Reset the admin password
+./ail_framework.sh --reset-password
+
+# Stop the container
+./ail_framework.sh --stop
+```
 
 ### Access the AIL-Framework UI
 Open your browser and navigate to:
@@ -55,13 +82,13 @@ Open your browser and navigate to:
 ### Reset Admin Password
 If you need to reset the admin password:
 ```bash
-docker exec ail-framework bin/LAUNCH.sh -rp
+./ail_framework.sh --reset-password
 ```
 
 ### Stop the Container
 To stop and remove the container:
 ```bash
-docker compose down
+./ail_framework.sh --stop
 ```
 
 ---
@@ -92,12 +119,15 @@ The Docker image is defined as `ail-framework:latest`. To rename it:
    ```yaml
    image: my-custom-ail:1.0
    ```
-2. Lauch the installation:
+2. Rebuild the image:
+   ```bash
+   docker compose build
+   ```
+
+3. Launch the installation:
    ```bash
    chmod +x ail_framework.sh
-   ```
-   ```bash
-   ./ail_framework.sh 
+   ./ail_framework.sh --setup
    ```
 
 ---
