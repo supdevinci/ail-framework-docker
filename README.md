@@ -28,18 +28,13 @@ This repository provides a ready-to-use Docker environment for **AIL-Framework**
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/<your-username>/<repository-name>.git](https://github.com/supdevinci/ail-framework-docker.git)
-cd <repository-name>
+git clone https://github.com/supdevinci/ail-framework-docker.git
+cd ail-framework-docker
 ```
 
 ### 2. Build the Docker Image
 ```bash
 docker compose build
-```
-
-### 3. Start the AIL-Framework Container
-```bash
-docker compose up -d
 ```
 
 ---
@@ -96,9 +91,12 @@ The Docker image is defined as `ail-framework:latest`. To rename it:
    ```yaml
    image: my-custom-ail:1.0
    ```
-2. Rebuild the image:
+2. Lauch the installation:
    ```bash
-   docker compose build
+   chmod +x ail_framework.sh
+   ```
+   ```bash
+   ./ail_framework.sh 
    ```
 
 ---
