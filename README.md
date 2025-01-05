@@ -34,7 +34,7 @@ cd ail-framework-docker
 
 ### 2. Build the Docker Image
 ```bash
-docker compose build
+chmod +x ail_framework.sh 
 ```
 
 ---
