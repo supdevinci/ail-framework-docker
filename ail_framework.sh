@@ -72,7 +72,7 @@ case "$1" in
         sudo docker compose down
         ;;
     *)
-        echo "Option invalide. Utilisez '--help' pour afficher les options disponibles."
+        show_help       
         exit 1
         ;;
 esac
