@@ -27,7 +27,7 @@ check_dependency() {
 }
 
 # Variables
-AIL_DOCKER_REPO="https://github.com/MatthisClavijo/ail-framework-docker.git"
+AIL_DOCKER_REPO="https://github.com/supdevinci/ail-framework-docker.git"
 AIL_FRAMEWORK_REPO="https://github.com/ail-project/ail-framework.git"
 DOCKER_CONTAINER_NAME="ail-framework"
 
