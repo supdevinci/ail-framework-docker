@@ -32,9 +32,10 @@ git clone https://github.com/supdevinci/ail-framework-docker.git
 cd ail-framework-docker
 ```
 
-### 2. Build the Docker Image
+### 2. Lauch the Docker Image
 ```bash
-chmod +x ail_framework.sh 
+chmod +x ail_framework.sh
+./ail_framework.sh
 ```
 
 ---
