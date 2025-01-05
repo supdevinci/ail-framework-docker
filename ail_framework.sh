@@ -61,7 +61,7 @@ case "$1" in
         echo "Réinitialisation du mot de passe administrateur pour AIL-Framework..."
         container_status=$(sudo docker inspect -f '{{.State.Running}}' $DOCKER_CONTAINER_NAME 2>/dev/null)
         if [ "$container_status" == "true" ]; then
-            sudo docker exec $DOCKER_CONTAINER_NAME bin/LAUNCH.sh -rp
+            sudo docker exec $DOCKER_CONTAINER_NAME bin/LAUNCH.sh -rp 2>/dev/null | grep -E "Réinitialisation|Resetting UI admin password|password|token" | while read -r line; do echo -e "\e[32m$line\e[0m"; done
             echo "Mot de passe administrateur réinitialisé avec succès."
         else
             echo "Erreur : le conteneur $DOCKER_CONTAINER_NAME n'est pas en cours d'exécution."
