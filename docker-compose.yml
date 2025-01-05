@@ -1,0 +1,21 @@
+services:
+  ail-framework:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: ail-framework:latest
+    container_name: ail-framework
+    command: /bin/bash
+    tty: true
+    volumes:
+      - ./Volumes/CRAWLED_SCREENSHOT/:/opt/ail-framework/CRAWLED_SCREENSHOT
+      - ./Volumes/PASTES/:/opt/ail-framework/PASTES
+      - ./Volumes/DATA_KVROCKS:/opt/ail-framework/DATA_KVROCKS
+      - ./Volumes/indexdir:/opt/ail-framework/indexdir
+      - ./Volumes/HASHS:/opt/ail-framework/HASHS
+      - ./Volumes/logs:/opt/ail-framework/logs
+    ports:
+      - 7000:7000
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+      - PYTHONIOENCODING=utf8
