@@ -43,8 +43,8 @@ case "$1" in
         check_dependency docker-compose
 
         echo "Clonage des dépôts..."
-        [ ! -d "ail-framework-docker" ] && git clone $AIL_DOCKER_REPO
-        cd ail-framework-docker
+        #[ ! -d "ail-framework-docker" ] && git clone $AIL_DOCKER_REPO
+        #cd ail-framework-docker
         [ ! -d "ail-framework" ] && git clone $AIL_FRAMEWORK_REPO
 
         echo "Construction du conteneur Docker..."
