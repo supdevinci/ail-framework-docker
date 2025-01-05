@@ -35,7 +35,7 @@ cd ail-framework-docker
 ### 2. Launch the Script
 ```bash
 chmod +x ail_framework.sh
-./ail_framework.sh
+./ail_framework.sh --setup
 ```
 
 ---
